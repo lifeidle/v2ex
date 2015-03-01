@@ -196,6 +196,9 @@ class HomeHandler(webapp.RequestHandler):
         self.response.out.write(output)
 
 class PlanesHandler(BaseHandler):
+    import sys
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
     def get(self):
         c = 0
         c = memcache.get('planes_c')
